@@ -1,0 +1,42 @@
+<app-crear-tarjeta *ngIf="show" [pk]="pk" [tipoaccion]="tipoAccion" (editarEvent)="retornaEmit($event)"></app-crear-tarjeta>
+
+<!-- listar-tarjeta.component.html -->
+<div class="card" *ngIf="!show">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-lg-12">
+        <h5 class="title">Listar Tarjeta</h5>
+        <button class="btn btn-primary" (click)="nuevo()"><i class="fa fa-plus"></i></button>
+        <!-- DxDataGrid Component -->
+        <dx-data-grid [dataSource]="formRegistroData" [showBorders]="true" [columnAutoWidth]="true">
+          <!-- Define Columns -->
+          <!-- Define Columns -->
+          <dxi-column width="20%" dataField="titular" caption="Titular" [visible]=""></dxi-column>
+          <dxi-column width="40%" dataField="campo2" caption="Texto"></dxi-column>
+          <dxi-column width="10%" dataField="animal1" caption="Favorite Animal"></dxi-column>
+          <!--[calculateCellValue]="lookupAnimal"-- cellTemplate="cellTemplateAnimal">-->
+          <dxi-column width="15%" dataField="date" dataType="date" caption="Fechas"></dxi-column>
+          <dxi-column width="15%" dataField="id" dataType="number" caption="Operaciones"
+            cellTemplate="CTOperaciones"></dxi-column>
+          <!-- <div *dxTemplate="let p of 'cellTemplateAnimal'">
+           <b> {{p.value}} </b>
+      </div>-->
+          <div *dxTemplate="let p of 'CTOperaciones'" class="row">
+            <div class="col-md-6">
+              <button class="btn btn-warning  btn-sm" (click)="editarEnv(p.value)" >
+                <i class="fa fa-edit"></i>
+              </button>
+            </div>
+            <div class="col-md-6">
+              <button class="btn btn-danger  btn-sm" (click)="eliminar(p.value)">
+                <i class="fa fa-trash"></i>
+              </button>
+            </div>
+          </div>
+          <dxo-sorting mode="multiple"></dxo-sorting>
+          <dxo-filter-row visible="true" applyFilter="auto"  ></dxo-filter-row>
+        </dx-data-grid>
+      </div>
+    </div>
+  </div>
+</div>

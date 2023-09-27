@@ -1,0 +1,89 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="title">CREAR TARJETA</h5>
+    <form class="example-form" [formGroup]="formRegistro" (ngSubmit)="enviar()">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div fxLayout="column" fxLayoutAlign="end">
+            <mat-form-field class="example-full-width" fxFlex="50" appearance="outline">
+              <mat-label>Titular</mat-label>
+              <mat-icon matPrefix>list</mat-icon>
+              <input matInput placeholder="Titular" formControlName="titular">
+            </mat-form-field>
+            <mat-error *ngIf="formRegistro.controls['titular'].hasError('required')">es requerido</mat-error>
+            <mat-error *ngIf="formRegistro.controls['titular'].hasError('minlength')">minimo de 3 caracteres</mat-error>
+            <mat-error *ngIf="formRegistro.controls['titular'].hasError('maxlength')">maximo de 10
+              caracteres</mat-error>
+            <mat-error *ngIf="formRegistro.controls['titular'].hasError('pattern')">no cumple el formato</mat-error>
+          </div>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-12">
+          <div fxLayout="column" fxLayoutAlign="end">
+            <mat-form-field class="example-full-width" fxFlex="50" appearance="outline">
+              <mat-label>Texto</mat-label>
+              <mat-icon matPrefix>assignment</mat-icon>
+              <textarea formControlName="campo2" matInput placeholder="Ex. It makes me feel..."></textarea>
+            </mat-form-field>
+            <mat-error *ngIf="formRegistro.controls['campo2'].hasError('required')">es requerido</mat-error>
+            <mat-error *ngIf="formRegistro.controls['campo2'].hasError('minlength')">minimo de 3 caracteres</mat-error>
+
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div fxLayout="column" fxLayoutAlign="end">
+            <mat-form-field fxFlex="50" appearance="outline">
+              <mat-label>Favorite animal</mat-label>
+              <mat-select formControlName="animal1" required>
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let animal of animals" [value]="animal.id">
+                  {{animal.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="formRegistro.controls['animal1'].hasError('required')">Please choose an
+                animal</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div fxLayout="column" fxLayoutAlign="end">
+            <mat-form-field fxFlex="50" appearance="outline">
+              <mat-label>Elija una fecha</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="date">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <mat-error *ngIf="formRegistro.controls['date'].hasError('required')">Please choose a date!</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div fxLayout="column" fxLayoutAlign="end">
+            <mat-radio-group aria-label="Select an option">
+
+              <mat-radio-button value="1">Option 1</mat-radio-button>
+              <mat-radio-button value="2">Option 2</mat-radio-button>
+
+            </mat-radio-group>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div fxLayout="column" fxLayoutAlign="end">
+            <mat-slide-toggle>Aceptar terminos!</mat-slide-toggle>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div fxLayout="column" fxLayoutAlign="end">
+            <button mat-raised-button class="color-button" [disabled]="!formRegistro.valid" type="submit"> {{btnName}}</button>
+            <button mat-raised-button class="cancel-button" type="button" (click)=" onButtonClickCancel() ">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>

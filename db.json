@@ -1,0 +1,88 @@
+{
+  "tarjetas": [
+    {
+      "id": 3,
+      "titular": "John 123",
+      "campo2": "Lorem ipsum 123",
+      "animal1": 2,
+      "date": "2023-09-23",
+      "option": "1",
+      "acceptTerms": true
+    },
+    {
+      "titular": "lkk",
+      "campo2": "vhgh",
+      "animal1": 1,
+      "date": "2023-09-11T04:00:00.000Z",
+      "option": 1,
+      "acceptTerms": true,
+      "id": 7
+    },
+    {
+      "titular": "gggg",
+      "campo2": "jkhsfhskh",
+      "animal1": 2,
+      "date": "2023-09-12T04:00:00.000Z",
+      "option": 1,
+      "acceptTerms": true,
+      "id": 8
+    },
+    {
+      "titular": "hgj",
+      "campo2": "djsagdja dja",
+      "animal1": 2,
+      "date": "2023-09-22T04:00:00.000Z",
+      "option": 1,
+      "acceptTerms": true,
+      "id": 18
+    },
+    {
+      "titular": "Juan",
+      "campo2": "jsiusjst slso",
+      "animal1": 1,
+      "date": "2023-10-31T04:00:00.000Z",
+      "option": 1,
+      "acceptTerms": true,
+      "id": 19
+    }
+  ],
+  "animals": [
+    {
+      "id": 1,
+      "name": "Lion"
+    },
+    {
+      "id": 2,
+      "name": "Tiger"
+    },
+    {
+      "id": 3,
+      "name": "Bear"
+    },
+    {
+      "id": 4,
+      "name": "Cat"
+    },
+    {
+      "titular": "jgjg",
+      "campo2": "dshk fhshfkskh",
+      "animal1": 2,
+      "date": "",
+      "id": 5
+    },
+    {
+      "titular": "ggjg",
+      "campo2": "ggj gjggj",
+      "animal1": 3,
+      "date": "2023-09-21T04:00:00.000Z",
+      "id": 6
+    },
+    {
+      "titular": "fhfh",
+      "campo2": "ggjgg ghj ",
+      "animal1": 3,
+      "date": "2023-09-21T04:00:00.000Z",
+      "id": 7
+    }
+  ]
+}
