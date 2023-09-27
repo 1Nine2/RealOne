@@ -1,13 +1,13 @@
 {
   "tarjetas": [
     {
-      "id": 3,
-      "titular": "John 123",
+      "titular": "John",
       "campo2": "Lorem ipsum 123",
       "animal1": 2,
       "date": "2023-09-23",
       "option": "1",
-      "acceptTerms": true
+      "acceptTerms": true,
+      "id": 3
     },
     {
       "titular": "lkk",
@@ -44,6 +44,15 @@
       "option": 1,
       "acceptTerms": true,
       "id": 19
+    },
+    {
+      "titular": "John ",
+      "campo2": "Lorem ipsum 123",
+      "animal1": 2,
+      "date": "2023-09-23",
+      "option": "1",
+      "acceptTerms": true,
+      "id": 20
     }
   ],
   "animals": [

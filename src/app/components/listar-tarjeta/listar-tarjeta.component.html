@@ -11,6 +11,7 @@
         <dx-data-grid [dataSource]="formRegistroData" [showBorders]="true" [columnAutoWidth]="true">
           <!-- Define Columns -->
           <!-- Define Columns -->
+          
           <dxi-column width="20%" dataField="titular" caption="Titular" [visible]=""></dxi-column>
           <dxi-column width="40%" dataField="campo2" caption="Texto"></dxi-column>
           <dxi-column width="10%" dataField="animal1" caption="Favorite Animal"></dxi-column>
@@ -35,6 +36,11 @@
           </div>
           <dxo-sorting mode="multiple"></dxo-sorting>
           <dxo-filter-row visible="true" applyFilter="auto"  ></dxo-filter-row>
+          <dxo-paging 
+          [enabled]="true"
+          [pageSize]="2"
+          [pageIndex]="1"> <!-- Shows the second page -->
+      </dxo-paging>
         </dx-data-grid>
       </div>
     </div>

@@ -41,6 +41,7 @@ export class CrearTarjetaComponent implements OnInit, OnDestroy {
 		this.getAnimales();
 		if (this.tipoaccion == 0) {
 			this.btnName = 'Editar';
+			console.log(this.pk);
 			this.fetchDataAndSetData(this.pk)
 		}
 	}
@@ -111,8 +112,8 @@ export class CrearTarjetaComponent implements OnInit, OnDestroy {
 		}).then((result) => {
 			if (result.isConfirmed) {
 				const data = this.formRegistro.value;
-				data.id = 19;
-				if (this.bandera == 1) {
+				
+				if (this.tipoaccion == 1) {
 					this.formSubscription = this.tarjetaService.postTarjeta(data).subscribe(
 						response => {
 							this.formRegistro.reset();
@@ -122,7 +123,7 @@ export class CrearTarjetaComponent implements OnInit, OnDestroy {
 							this.toastr.error('Data error sent!', 'error');
 						}
 					);
-				} else if (this.bandera == 0) {
+				} else if (this.tipoaccion == 0) {
 
 
 					this.tarjetaService.editTarjeta(this.pk, this.formRegistro.value).subscribe(
